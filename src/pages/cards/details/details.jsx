@@ -3,18 +3,19 @@ import './details.css';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-const URL='https://api.tvmaze.com/shows/1929'
+const URL='https://api.tvmaze.com/shows/'
 
 export const Details = () => {
+    
 
-    const id=useSelector(state=>state.idSetter.value)
+    const id=useSelector(state=>state.IdSetter.value);
     const [showData, setShowData] = useState(null);
 
 console.log(id);
     
      
   useEffect(() => {
-    fetch('https://api.tvmaze.com/shows/1929')
+    fetch(`https://api.tvmaze.com/shows/${id}`)
       .then(response => response.json())
       .then(data => setShowData(data))
       .catch(error => console.log(error));

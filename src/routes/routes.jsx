@@ -5,6 +5,7 @@ import { Details } from '../pages/cards/details/details.jsx';
 
 export const Rout = () => {
   return (<Routes>
+<Route path="/" element={<Test/>}/>
 <Route path="/tv-shows" element={<Test/>}/>
 <Route path="/tv-shows/details" element={<Details/>}/>
 </Routes>

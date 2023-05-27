@@ -2,22 +2,23 @@ import React from "react";
 import './card.css';
 import { getImage, getRating, getRuntime, getdate, getgenres } from "../func.js";
 import { Link } from "react-router-dom";
-import IdSetter, { setIt } from "../../features/counter/IdSetter.js";
+import IdSetter from "../../features/counter/IdSetter";
 import { useDispatch } from "react-redux";
+import { setIt } from "../../features/counter/IdSetter";
 
  
 
 export const Card = (props) => {
 
   const dispatch=useDispatch();
- console.log(props.data.show);
+//  console.log(props.data.show);
 
  const {id,genres,language,image,name,rating,runtime,schedule,premiered,countryname}=props.data.show;
  
 
- function nam(id){
+ function nam(i){
   
-  useDispatch(setIt(id));
+  dispatch(setIt(i));
    
  }
 
@@ -30,7 +31,7 @@ export const Card = (props) => {
       <div className="card-content">
 
       <div className="card-title">
-        <Link to='/tv-shows/details'><h3 onClick={nam(id)}>{name}</h3></Link>
+        <Link to='/tv-shows/details' onClick={nam(id)}><h3>{name}</h3></Link>
       </div>
 
       <div className="card-body">

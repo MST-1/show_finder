@@ -1,0 +1,16 @@
+.main{
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #222b32;
+    padding: 10px;
+
+
+}
+
+main:hover{
+
+
+    transform: scale(1,1);
+    box-shadow: 0px 0px 15px 0px;
+ }
